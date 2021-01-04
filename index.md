@@ -19,7 +19,7 @@ Syntax highlighted code block
 - List
 
 1. Numbered
-2. List
+2. Lis
 
 **Bold** and _Italic_ and `Code` text
 
