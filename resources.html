@@ -1,45 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>The Ultimate Sports and Recreation Guide</title>
-    
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-  <style>
-    h1 {text-align: center;}
-    div {
-    background-color: yellow;
-    width: 300px;
-    border: 6px solid blue;
-    padding: 15px;
-    margin: 0px;
-    font-size: 20px;
-    }
-  </style>
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>  
-  <body>
-    <h1>The Ultimate Sports and Recreation Guide</h1>
-    
-  <ul>
-    <li><a class="active" href="index.html">Home</a></li>
-    <li><a href="guidance.html">Guidance</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-    
-    
+    <title>Placeholder Title</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPA9eqY1ZZfA5CoXczNdS2upIvr8x7UBk&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
     <script>
+      let map, infoWindow;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow();
+        const locationButton = document.createElement("button");
+        locationButton.textContent = "Allow Access To Your Location";
+        locationButton.classList.add("custom-map-control-button");
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+          locationButton
+        );
+        locationButton.addEventListener("click", () => {
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              position => {
+                const pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent("Location found.");
+                infoWindow.open(map);
+                map.setCenter(pos);
+              },
+              () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+              }
+            );
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+        });
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+          browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+            : "Error: Your browser doesn't support geolocation."
+        );
+        infoWindow.open(map);
+      }
     </script>
+  </head>
+  <body>
+<h1>Placeholder Title</h1>
+
+    <div id="NavBar">
+      <ul>
+        <li class="btn"><a href="index.html">Home</a></li>
+        <li class="btn"><a href="guidance.html">Guidance</a></li>
+        <li class="btn">
+          <a class="active" href="resources.html">Resources</a>
+        </li>
+        <li class="btn"><a href="news.html">News</a></li>
+        <li class="btn"><a href="contact.html">Contact Us</a></li>
+        <li class="btn"><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <h2>
+      Find Recreational Centres Near You With The Interactive Map
+    </h2>
+    <!--The div element for the map -->
+    <div id="map"></div>
     
-    <footer>&copy; Copyright 2021 Wesley Ou</footer>
+    <h2>
+      Resources To Help You Out
+    </h2>
+    <div id="resources">
+      <h3>
+        <a href="https://www.canada.ca/en/services/culture/sport.html">Government Of Canada</a>
+        <p>
+          Meet Canada's high profile athletes and cheer them on at sport events at home or abroad. Learn how our sport programs provide Canadians with access to sport as part of a healthy and active lifestyle, and help high performance athletes participate and succeed in competitions.
+        </p>
+      </h3>
+    </div>
+    
   </body>
 </html>
