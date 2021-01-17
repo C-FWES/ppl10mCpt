@@ -40,8 +40,9 @@ li a:hover {
   background-color: #00ff00;
 }
 
-.active {
-  background-color: #4CAF50;
+.active, .btn:hover {
+  background-color: #0000ff;
+  color: white;
 }
 
 ul {
