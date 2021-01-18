@@ -6,7 +6,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPA9eqY1ZZfA5CoXczNdS2upIvr8x7UBk&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/resources.css" />
     <style type="text/css">
       /* Set the size of the div element that contains the map */
       #map {
@@ -22,7 +22,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: -34.397, lng: 150.644 },
-          zoom: 6
+          zoom: 14
         });
         infoWindow = new google.maps.InfoWindow();
         const locationButton = document.createElement("button");
@@ -41,7 +41,7 @@
                   lng: position.coords.longitude
                 };
                 infoWindow.setPosition(pos);
-                infoWindow.setContent("Location found.");
+                infoWindow.setContent("You Are Here");
                 infoWindow.open(map);
                 map.setCenter(pos);
               },
@@ -68,18 +68,17 @@
     </script>
   </head>
   <body>
-<h1>Placeholder Title</h1>
+    <h1>Placeholder Title</h1>
 
     <div id="NavBar">
       <ul>
-        <li class="btn"><a href="index.html">Home</a></li>
-        <li class="btn"><a href="guidance.html">Guidance</a></li>
-        <li class="btn">
+        <li class="navbar"><a href="index.html">Home</a></li>
+        <li class="navbar"><a href="guidance.html">Guidance</a></li>
+        <li class="navbar">
           <a class="active" href="resources.html">Resources</a>
         </li>
-        <li class="btn"><a href="news.html">News</a></li>
-        <li class="btn"><a href="contact.html">Contact Us</a></li>
-        <li class="btn"><a href="about.html">About</a></li>
+        <li class="navbar"><a href="news.html">News</a></li>
+        <li class="navbar"><a href="about.html">About</a></li>
       </ul>
     </div>
     <h2>
@@ -87,18 +86,79 @@
     </h2>
     <!--The div element for the map -->
     <div id="map"></div>
-    
+
     <h2>
       Resources To Help You Out
     </h2>
-    <div id="resources">
+    <div id="resources1">
       <h3>
-        <a href="https://www.canada.ca/en/services/culture/sport.html">Government Of Canada</a>
-        <p>
-          Meet Canada's high profile athletes and cheer them on at sport events at home or abroad. Learn how our sport programs provide Canadians with access to sport as part of a healthy and active lifestyle, and help high performance athletes participate and succeed in competitions.
-        </p>
+        <a href="https://www.canada.ca/en/services/culture/sport.html"
+          >Government Of Canada</a
+        >
       </h3>
+      <p>
+        Meet Canada's high profile athletes and cheer them on at sport events at
+        home or abroad. Learn how our sport programs provide Canadians with
+        access to sport as part of a healthy and active lifestyle, and help high
+        performance athletes participate and succeed in competitions.
+      </p>
+      <img
+        src="https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FCaanadasports.jpg?v=1610895415680"
+      />
     </div>
-    
+    <div id="resources2">
+      <h3>
+        <a href="http://www.mtc.gov.on.ca/en/sport/sport_index.shtml">
+          Ministry Of Heritage, Sport, Tourism and Culture Industries
+        </a>
+      </h3>
+      <p>
+        Sport and recreation are important sectors to the physical, emotional
+        and economic well-being of Ontarians. Ontario’s total household spending
+        on amateur sport was estimated to be $12.6 billion in 2013.
+      </p>
+      <ol>
+        <li class="description">
+          In 2012, the average Canadian household spent $3,773 on recreation.
+        </li>
+        <li class="description">
+          Approximately 98% of Canadians believe that recreation and parks are
+          essential services.
+        </li>
+        <li class="description">
+          At the 2016 Olympics in Rio, Ontario athletes represented 45% of the
+          Canadian Olympic Team.
+        </li>
+      </ol>
+      <p>
+        The Ministry continues to champion participation in sport and recreation
+        activities across the province. Participation in sport contributes to
+        better health, provides role models for the pursuit of personal
+        excellence, exemplifies the value of teamwork and builds community
+        pride. The Ministry works collaboratively with the sport and recreation
+        sector to promote, support, and increase opportunities for all Ontarians
+        to participate in sport and recreation, from playground to podium.
+      </p>
+      <img
+        src="https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2Fsport_web_banner.jpg?v=1610896738194"
+      />
+    </div>
+    <div id="resources3">
+      <h3>
+        <a
+          href="https://charityvillage.com/organizations/directory/sports-and-recreation/"
+        >
+          Charity Village
+        </a>
+      </h3>
+      <p>
+        Charity Village hosts an array of sports and recreational resources for
+        a variety of locations and for people of all ages.
+      </p>
+      <img
+        src="https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FCharity-Village-Logo-300-1.png?v=1610987540403"
+      />
+    </div>
+    <footer>&copy; Copyright 2021 Wesley Ou</footer>
   </body>
 </html>

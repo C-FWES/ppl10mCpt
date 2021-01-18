@@ -27,24 +27,19 @@
         <li class="btn"><a class = "active" href="guidance.html">Guidance</a></li>
         <li class="btn"><a href="resources.html">Resources</a></li>
         <li class="btn"><a href="news.html">News</a></li>
-        <li class="btn"><a href="contact.html">Contact Us</a></li>
         <li class="btn"><a href="about.html">About</a></li>
       </ul>
     </div>
-
-    <script>
-      var header = document.getElementById("NavBar");
-      var btns = header.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          var current = document.getElementsByClassName("active");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
-          }
-          this.className += " active";
-        });
-      }
-    </script>
+    
+    <div id="Info1">
+      <h3>
+        Benefits Of Sports And Recreation
+      </h3>
+      <p>
+        Sports and Recreation provides us with many health benefits!
+      </p>
+      
+    </div>
 
     <footer>&copy; Copyright 2021 Wesley Ou</footer>
   </body>
