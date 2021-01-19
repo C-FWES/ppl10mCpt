@@ -30,6 +30,10 @@ h1 {
   list-style-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315');
 }
 
+#Info2 {
+  list-style-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315');
+}
+
 li a {
   display: block;
   color: blue;
@@ -54,4 +58,5 @@ li a:hover {
   top: 0;
   width: 100%;
 }
+
 
