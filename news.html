@@ -14,6 +14,9 @@
       h1 {
         text-align: center;
       }
+      h2 {
+        text-align: center;
+      }
     </style>
     <!-- import the webpage's javascript file -->
     <script data-main="/script.js" src="/require.js" defer></script>
@@ -30,12 +33,16 @@
         <li class="btn"><a href="about.html">About</a></li>
       </ul>
     </div>
+    
+    <h2>
+      Latest Sports News
+    </h2>
 
     <div id="example">
       <script>
         var token ="b8e0f01987a633679ee2d97a047e2163";
 
-        fetch("https://gnews.io/api/v4/search?q=sports&lang=en&token=" + token)
+        fetch("https://gnews.io/api/v4/search?q=athletic&country=ca&lang=en&token=" + token)
           .then(function(response) {
             if (response.ok) {
               return response.json();
@@ -60,16 +67,16 @@
 
             html +=
               `<div>
-   <h3>Title : ` +
+   <h3>` +
               article.title +
               `</h3>
-   <p>Description : ` +
+   <p>` +
               article.description +
               `</p>
-   <p>Publish Date : ` +
+   <p>Date : ` +
               article.publishedAt +
               `</p>
-   <p>Source name : ` +
+   <p>` +
               article.source.name +
               `</p>
    <p>URL : ` +
