@@ -16,7 +16,7 @@
       }
     </style>
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script data-main="/script.js" src="/require.js" defer></script>
   </head>
   <body>
     <h1>Placeholder Title</h1>
@@ -26,24 +26,66 @@
         <li class="btn"><a href="index.html">Home</a></li>
         <li class="btn"><a href="guidance.html">Guidance</a></li>
         <li class="btn"><a href="resources.html">Resources</a></li>
-        <li class="btn"><a class = "active" href="news.html">News</a></li>
+        <li class="btn"><a class="active" href="news.html">News</a></li>
         <li class="btn"><a href="about.html">About</a></li>
       </ul>
     </div>
 
-    <script>
-      var header = document.getElementById("NavBar");
-      var btns = header.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          var current = document.getElementsByClassName("active");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
+    <div id="example">
+      <script>
+        var token ="b8e0f01987a633679ee2d97a047e2163";
+
+        fetch("https://gnews.io/api/v4/search?q=sports&lang=en&token=" + token)
+          .then(function(response) {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Something went wrong");
+            }
+          })
+          .then(function(data) {
+            articles = data.articles;
+            showArticles(articles);
+          })
+          .catch(function(error) {
+            // Requests limit reached.
+            console.log("Requests limit reached.");
+          });
+
+        function showArticles(articles) {
+          let html = "";
+
+          for (let i = 0; i < articles.length; i++) {
+            const article = articles[i];
+
+            html +=
+              `<div>
+   <h3>Title : ` +
+              article.title +
+              `</h3>
+   <p>Description : ` +
+              article.description +
+              `</p>
+   <p>Publish Date : ` +
+              article.publishedAt +
+              `</p>
+   <p>Source name : ` +
+              article.source.name +
+              `</p>
+   <p>URL : ` +
+              article.url +
+              `</p>
+   <img style="width: 200px" src="` +
+              article.image +
+              `">
+   <hr>
+  </div>`;
           }
-          this.className += " active";
-        });
-      }
-    </script>
+
+          document.getElementById("example").innerHTML = html;
+        }
+      </script>
+    </div>
 
     <footer>&copy; Copyright 2021 Wesley Ou</footer>
   </body>
