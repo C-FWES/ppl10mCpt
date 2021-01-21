@@ -16,6 +16,7 @@
       }
       h2 {
         text-align: center;
+        color: blue;
       }
     </style>
     <!-- import the webpage's javascript file -->
@@ -42,7 +43,7 @@
       <script>
         var token ="b8e0f01987a633679ee2d97a047e2163";
 
-        fetch("https://gnews.io/api/v4/search?q=athletic&country=ca&lang=en&token=" + token)
+        fetch("https://gnews.io/api/v4/search?q=sports&country=ca&lang=en&token=" + token)
           .then(function(response) {
             if (response.ok) {
               return response.json();
@@ -64,7 +65,7 @@
 
           for (let i = 0; i < articles.length; i++) {
             const article = articles[i];
-
+            
             html +=
               `<div>
    <h3>` +
@@ -79,8 +80,8 @@
    <p>` +
               article.source.name +
               `</p>
-   <p>URL : ` +
-              article.url +
+   <p>` + 
+              article.url + 
               `</p>
    <img style="width: 200px" src="` +
               article.image +
