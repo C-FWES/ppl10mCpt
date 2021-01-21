@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="/style.css" />
 
     <style>
+      #newsbox {
+        background-color: yellow;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: 4px solid blue;
+      }
       h1 {
         text-align: center;
       }
@@ -34,65 +42,69 @@
         <li class="btn"><a href="about.html">About</a></li>
       </ul>
     </div>
-    
+
     <h2>
       Latest Sports News
     </h2>
+    <div id="newsbox">
+      <div id="example">
+        <script>
+          var token = "b8e0f01987a633679ee2d97a047e2163";
 
-    <div id="example">
-      <script>
-        var token ="b8e0f01987a633679ee2d97a047e2163";
+          fetch(
+            "https://gnews.io/api/v4/search?q=sports&country=ca&lang=en&token=" +
+              token
+          )
+            .then(function(response) {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Something went wrong");
+              }
+            })
+            .then(function(data) {
+              articles = data.articles;
+              showArticles(articles);
+            })
+            .catch(function(error) {
+              // Requests limit reached.
+              console.log("Requests limit reached.");
+            });
 
-        fetch("https://gnews.io/api/v4/search?q=sports&country=ca&lang=en&token=" + token)
-          .then(function(response) {
-            if (response.ok) {
-              return response.json();
-            } else {
-              throw new Error("Something went wrong");
-            }
-          })
-          .then(function(data) {
-            articles = data.articles;
-            showArticles(articles);
-          })
-          .catch(function(error) {
-            // Requests limit reached.
-            console.log("Requests limit reached.");
-          });
+          function showArticles(articles) {
+            let html = "";
 
-        function showArticles(articles) {
-          let html = "";
+            for (let i = 0; i < articles.length; i++) {
+              const article = articles[i];
 
-          for (let i = 0; i < articles.length; i++) {
-            const article = articles[i];
-            
-            html +=
-              `<div>
+              html +=
+                `<div>
    <h3>` +
-              article.title +
-              `</h3>
+                article.title +
+                `</h3>
    <p>` +
-              article.description +
-              `</p>
+                article.description +
+                `</p>
    <p>Date : ` +
-              article.publishedAt +
-              `</p>
+                article.publishedAt +
+                `</p>
    <p>` +
-              article.source.name +
-              `</p>
-   <p>` + 
-              article.url + 
-              `</p>
+                article.source.name +
+                `</p>
+   <p>` +
+                article.url +
+                `</p>
    <img style="width: 200px" src="` +
-              article.image +
-              `">
+                article.image +
+                `">
    <hr>
   </div>`;
-          }
+            }
 
-          document.getElementById("example").innerHTML = html;
-        }
-      </script>
+            document.getElementById("example").innerHTML = html;
+          }
+        </script>
+      </div>
     </div>
 
     <footer>&copy; Copyright 2021 Wesley Ou</footer>
