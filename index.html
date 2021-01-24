@@ -14,6 +14,47 @@
       h1 {
         text-align: center;
       }
+      #infobox {
+        width: 500px;
+        background-color: yellow;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: 4px solid blue;
+        margin-bottom: 15px;
+      }
+      #covid {
+        width: 500px;
+        background-color: yellow;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: 4px solid blue;
+        margin-left: 900px;
+        margin-top: -450px;
+      }
+      #flash {
+        text-align: center;
+        animation: change 1s both;
+        animation-iteration-count: infinite;
+      }
+      #poll {
+        margin-top: 200px;
+      }
+      p {
+        text-align: center;
+      }
+
+      @keyframes change {
+        from {
+          color: black;
+        }
+        to {
+          color: red;
+        }
+      }
     </style>
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
@@ -23,7 +64,7 @@
 
     <div id="NavBar">
       <ul>
-        <li class="btn"><a class = "active" href="index.html">Home</a></li>
+        <li class="btn"><a class="active" href="index.html">Home</a></li>
         <li class="btn"><a href="guidance.html">Guidance</a></li>
         <li class="btn"><a href="resources.html">Resources</a></li>
         <li class="btn"><a href="news.html">News</a></li>
@@ -31,19 +72,162 @@
       </ul>
     </div>
 
-    <script>
-      var header = document.getElementById("NavBar");
-      var btns = header.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          var current = document.getElementsByClassName("active");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
-          }
-          this.className += " active";
-        });
-      }
-    </script>
+    <div id="infobox">
+      <p>
+        Sports and recreation is an important part of our lives and provides
+        many health and social benefits. This guide is here to help you find out
+        how you can best fit sports and recreation into your life!
+      </p>
+      <img src="https://media0.giphy.com/media/l4FGp7yJRMJLPsXuw/giphy.gif" />
+    </div>
+
+    <div id="covid">
+      <h2 id="flash">
+        COVID ALERT!!!
+      </h2>
+      <p>
+        Disinfect and wipe sports equipment and surfaces
+      </p>
+      <p>
+        Wear masks when participating in group sports(best to avoid for now)
+      </p>
+      <p>
+        Practice physical distancing before and after games and during games if possible
+      </p>
+      <p>
+        Do not attend sports activities if you are feeling ill, in isolation, or have tested positive for COVID-19
+      </p>
+    </div>
+
+    <form method="post" action="https://poll.pollcode.com/93611898">
+      <div id="poll"
+        style="background-color:#EEEEEE;padding:2px;width:175px;font-family:Trebuchet MS;font-size:small;color:#000000;"
+      >
+        <div style="padding:2px 0px 4px 2px;">
+          <strong>What is your favorite sport?</strong>
+        </div>
+        <input
+          type="radio"
+          name="answer"
+          value="1"
+          id="answer936118981"
+          style="float:left;"
+        /><label for="answer936118981" style="float:left;width:150px;"
+          >Soccer/football</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="2"
+          id="answer936118982"
+          style="float:left;"
+        /><label for="answer936118982" style="float:left;width:150px;"
+          >Tennis</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="3"
+          id="answer936118983"
+          style="float:left;"
+        /><label for="answer936118983" style="float:left;width:150px;"
+          >Badminton</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="4"
+          id="answer936118984"
+          style="float:left;"
+        /><label for="answer936118984" style="float:left;width:150px;"
+          >Running</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="5"
+          id="answer936118985"
+          style="float:left;"
+        /><label for="answer936118985" style="float:left;width:150px;"
+          >Basketball</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="6"
+          id="answer936118986"
+          style="float:left;"
+        /><label for="answer936118986" style="float:left;width:150px;"
+          >American football</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="7"
+          id="answer936118987"
+          style="float:left;"
+        /><label for="answer936118987" style="float:left;width:150px;"
+          >Table tennis</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="8"
+          id="answer936118988"
+          style="float:left;"
+        /><label for="answer936118988" style="float:left;width:150px;"
+          >Volleyball</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="9"
+          id="answer936118989"
+          style="float:left;"
+        /><label for="answer936118989" style="float:left;width:150px;"
+          >Pickleball</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="10"
+          id="answer9361189810"
+          style="float:left;"
+        /><label for="answer9361189810" style="float:left;width:150px;"
+          >Hockey</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <input
+          type="radio"
+          name="answer"
+          value="11"
+          id="answer9361189811"
+          style="float:left;"
+        /><label for="answer9361189811" style="float:left;width:150px;"
+          >Baseball</label
+        >
+        <div style="clear:both;height:2px;"></div>
+        <div align="center" style="padding:3px;">
+          <input type="submit" value=" Vote " />&nbsp;<input
+            type="submit"
+            name="view"
+            value=" View "
+          />
+        </div>
+        <div align="right" style="font-size:10px">
+          pollcode.com <a href="https://pollcode.com/">free polls</a>
+        </div>
+      </div>
+    </form>
 
     <footer>&copy; Copyright 2021 Wesley Ou</footer>
   </body>

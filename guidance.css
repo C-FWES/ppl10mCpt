@@ -9,7 +9,7 @@ h1 {
   font-style: bold;
   font-size: 85px;
   color: #0000ff;
-  background-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2Fcollage-5-young-emotional-jumping-260nw-1675100671.webp?v=1610587174309')
+  background-image: url("https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2Fcollage-5-young-emotional-jumping-260nw-1675100671.webp?v=1610587174309");
 }
 
 .nav {
@@ -23,19 +23,18 @@ h1 {
 .btn {
   border-right: 2px solid #0000ff;
   float: left;
-  
 }
 
 #Info1 {
-  list-style-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315');
+  list-style-image: url("https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315");
 }
 
 #Info2 {
-  list-style-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315');
+  list-style-image: url("https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315");
 }
 
 #Info3 {
-  list-style-image: url('https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315');
+  list-style-image: url("https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FArrow.png?v=1611006592315");
 }
 
 li a {
@@ -52,7 +51,8 @@ li a:hover {
   background-color: #00ff00;
 }
 
-.active, .btn:hover {
+.active,
+.btn:hover {
   background-color: #0000ff;
   color: white;
 }
@@ -63,4 +63,10 @@ li a:hover {
   width: 100%;
 }
 
+body {
+  background-image: url("https://cdn.glitch.com/492043fd-6b85-442a-b7a0-d8ac93ff55c6%2FSports%20background.jpeg?v=1611352535552");
+}
 
+footer {
+  color: white;
+}
